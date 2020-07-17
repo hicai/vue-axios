@@ -21,7 +21,7 @@ export default {
 
 //写法二
      this.$axios({
-       methods:'get',
+       method:'get',
        url:'/data.json'   
      }).then(res=>{
           console.log(res)
