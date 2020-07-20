@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/lx">get方法</router-link>
+      <router-link to="/lx">axios基本用法</router-link> |
+       <router-link to="/lx2">axios并发请求</router-link>
     </div>
     <router-view/>
   </div>
