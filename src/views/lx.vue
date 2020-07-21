@@ -1,6 +1,6 @@
 <template>
   <div lass="home">
-      <h1>get方法</h1>
+      <h1>axios基本用法</h1>
   </div>
 </template>
 
@@ -67,17 +67,34 @@ export default {
           console.log(res)
      })   
 
-     //put请求
+     //put请求 更新数据
      //    this.$axios.put("/data.json",data
     //     }).then(res=>{
     //       console.log(res)
     //     })
 
-    //patch请求
+    //patch请求  更新数据
     //    this.$axios.patch("/data.json",data
     //     }).then(res=>{
     //       console.log(res)
     //     })
+
+    //delete请求 删除数据  只有两个参数 url config（对象）
+    // this.$axios.delete("/delete",{
+    //   params:{   //参数在url上
+    //     id:1
+    //    }
+    // }).then(res=>{
+    //    console.log(res)
+    // })
+
+    // this.$axios.delete("/delete",{
+    //    data:{ //参数在请求体上
+    //     id:1
+    //    }
+    // }).then(res=>{
+    //    console.log(res)
+    // })
 
   }
 }

@@ -20,7 +20,7 @@ Vue.use(VueRouter)
   },
   {
     path: '/lx',
-    name: 'axios2-1',
+    name: 'axios基础用法',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -28,8 +28,18 @@ Vue.use(VueRouter)
   },
   {
     path:'/lx2',
-    name:'并发请求',
+    name:'axios并发请求',
     component:()=> import('../views/lx2.vue')
+  },
+  {
+    path:'/lx3',
+    name:'axios多接口请求',
+    component:()=>import('../views/lx3.vue')
+  },
+  {
+    path:'/lx4',
+    name:'axios相关配置',
+    component:()=>import('../views/lx4.vue')
   }
 ]
 

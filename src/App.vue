@@ -4,7 +4,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/lx">axios基本用法</router-link> |
-       <router-link to="/lx2">axios并发请求</router-link>
+      <router-link to="/lx2">axios并发请求</router-link> |
+      <router-link to="/lx3">axios多接口请求</router-link> |
+      <router-link to="/lx4">axios相关配置</router-link> |
     </div>
     <router-view/>
   </div>
