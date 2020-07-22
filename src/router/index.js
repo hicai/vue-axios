@@ -40,6 +40,11 @@ Vue.use(VueRouter)
     path:'/lx4',
     name:'axios相关配置',
     component:()=>import('../views/lx4.vue')
+  },
+  {
+    path:'/lx5',
+    name:'axios拦截器',
+    component:()=>import('../views/lx5.vue')
   }
 ]
 

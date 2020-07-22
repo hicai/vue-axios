@@ -43,6 +43,36 @@ export default {
    //配置优先级：请求配置 > 实例配置 > 全局配置
 
 
+    //实际开发
+    // 有两种请求接口：
+    // http:localhost:9090
+    // http:localhost:9091
+    let instanceOne = this.$axios.create({
+      baseURL : 'http:localhost:9090',
+      timeout:1000
+    })
+
+    let instanceTwo = this.$axios.create({
+      baseURL : 'http:localhost:9091',
+      timeout:1000
+    })
+
+    //配置项有：baseURL timeout url method params
+    instanceOne.get('/data.json',{
+      params:{}
+    }).then(res=>{
+      console.log(res)
+    })
+
+    //配置项有：baseURL timeout:2000 url method 
+   instanceTwo.get('/data.json',{
+      timeout:2000 //重新定义请求超时时长。
+    }).then(res=>{
+      console.log(res)
+    })
+
+    
+
   },
 
 }

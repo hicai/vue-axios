@@ -13,8 +13,8 @@ export default {
   created(){
       //当后端接口地址不同，并超时时长不同时。
       let instance = this.$axios.create({
-          baseURL:'http://localhost:8080', // 端口号
-          timeout: 1000 //超时时长
+          baseURL:'http://localhost:8080', //请求域名 端口号
+          timeout: 1000 //请求超时时长（单位ms）
       })
 
     //   let axios2 = axios.create({
