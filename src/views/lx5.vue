@@ -24,7 +24,7 @@ export default {
     axios.interceptors.response.use(res=>{
         return res //请求成功对响应数据做处理
     },err=>{
-         return Promise.reject(err) //请求失败做处理
+         return Promise.reject(err) //响应失败做处理
     })
     axios.get().then(res=>{  //axios.interceptors.response 请求的res数据到then()里面
       console.log(res)  
