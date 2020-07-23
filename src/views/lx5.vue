@@ -22,10 +22,46 @@ export default {
     })
     //响应拦截器
     axios.interceptors.response.use(res=>{
-        return res
+        return res //请求成功对响应数据做处理
+    },err=>{
+         return Promise.reject(err) //请求失败做处理
     })
 
     //取消拦截器
+    let interceptors = axios.interceptors.request.use(config=>{
+        config.headers={
+            auth:true
+        }
+         return config
+    })
+    axios.interceptors.request.eject(interceptors)
+
+    //需要登录状态（token:''）登录的接口
+    let instance = axios.create({})
+    instance.interceptors.request.use(config=>{
+         config.headers.token = ''
+         return config
+    })
+
+   //不需要登录状态的接口
+    let newInstance = axios.create({})
+    newInstance.get('/data.json',{
+      params:{}
+    }).then(res=>{
+      console.log(res)
+    })
+    
+    // 移动端开发
+    let instance_phone = axios.create({})
+    instance_phone.interceptors.request.use(config=>{
+        alert("请求中")
+        return config
+    })
+    instance_phone.interceptors.response.use(res=>{
+        alert("响应完成")
+        return res
+    })
+
   },
 }
 </script>

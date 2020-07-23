@@ -12,8 +12,6 @@ export default {
   },
   created(){
     // axios配置参数都有哪些 
-
-    //1.axios实例配置
    let instance  = this.$axios.create({
         baseURL:'http://localhost:8080',  //请求域名
         timeout:1000, //请求超时时长
@@ -28,13 +26,16 @@ export default {
    instance.get('/data.json').then(res=>{
        console.log(res)
    })
+
+   //1.axios实例配置
    //修改配置项
-   instance.defaults.timeout = 2000 
+  //  let instance = axios.create()
+  //  instance.defaults.timeout = 2000 
 
    //2.axios请求配置 
-  instance.get('/data.json',{
-        timeout:5000
-    })
+  // instance.get('/data.json',{
+  //       timeout:5000
+  //   })
 
     //3.axios全局配置
     // axios.defaults.baseURL = 'http://localhost:8080'
@@ -70,7 +71,7 @@ export default {
     }).then(res=>{
       console.log(res)
     })
-
+    
     
 
   },
