@@ -26,6 +26,10 @@ export default {
     },err=>{
          return Promise.reject(err) //请求失败做处理
     })
+    axios.get().then(res=>{  //axios.interceptors.response 请求的res数据到then()里面
+      console.log(res)  
+    })
+
 
     //取消拦截器
     let interceptors = axios.interceptors.request.use(config=>{
