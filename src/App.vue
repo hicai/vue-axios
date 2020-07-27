@@ -8,6 +8,7 @@
       <router-link to="/lx3">axios多接口请求</router-link> |
       <router-link to="/lx4">axios相关配置</router-link> |
       <router-link to="/lx5">axios拦截器</router-link> |
+       <router-link to="/lx6">axios错误处理</router-link> |
     </div>
     <router-view/>
   </div>

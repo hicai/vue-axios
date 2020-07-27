@@ -44,11 +44,11 @@ export default {
     axios.interceptors.request.eject(interceptors)
 
     //需要登录状态（token:''）登录的接口
-    let instance = axios.create({})
-    instance.interceptors.request.use(config=>{
-         config.headers.token = ''
-         return config
-    })
+    // let instance = axios.create({})
+    // instance.interceptors.request.use(config=>{
+    //      config.headers.token = ''
+    //      return config
+    // })
 
    //不需要登录状态的接口
     let newInstance = axios.create({})
@@ -59,15 +59,15 @@ export default {
     })
     
     // 移动端开发
-    let instance_phone = axios.create({})
-    instance_phone.interceptors.request.use(config=>{
-        alert("请求中")
-        return config
-    })
-    instance_phone.interceptors.response.use(res=>{
-        alert("响应完成")
-        return res
-    })
+    // let instance_phone = axios.create({})
+    // instance_phone.interceptors.request.use(config=>{
+    //     alert("请求中")
+    //     return config
+    // })
+    // instance_phone.interceptors.response.use(res=>{
+    //     alert("响应完成")
+    //     return res
+    // })
 
   },
 }

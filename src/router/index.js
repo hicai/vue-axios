@@ -45,6 +45,10 @@ Vue.use(VueRouter)
     path:'/lx5',
     name:'axios拦截器',
     component:()=>import('../views/lx5.vue')
+  }, {
+    path:'/lx6',
+    name:'axios错误处理',
+    component:()=>import('../views/lx5.vue')
   }
 ]
 
