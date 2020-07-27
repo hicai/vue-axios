@@ -30,7 +30,7 @@ export default {
      instance.interceptors.response.use(res=>{
        return res
      },err=>{
-        alert('响应错误')
+        alert('响应错误') // 一般http状态码以5开头，常见：500系统错误，502系统重启
         return Promise.reject(err)
      })
 
