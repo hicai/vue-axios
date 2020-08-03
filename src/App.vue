@@ -1,14 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
       <router-link to="/lx">axios基本用法</router-link> |
       <router-link to="/lx2">axios并发请求</router-link> |
       <router-link to="/lx3">axios多接口请求</router-link> |
       <router-link to="/lx4">axios相关配置</router-link> |
       <router-link to="/lx5">axios拦截器</router-link> |
-       <router-link to="/lx6">axios错误处理</router-link> |
+      <router-link to="/lx6">axios错误处理</router-link> |
+      <router-link to="/lx7">axios取消处理</router-link> |
     </div>
     <router-view/>
   </div>

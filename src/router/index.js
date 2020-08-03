@@ -48,7 +48,12 @@ Vue.use(VueRouter)
   }, {
     path:'/lx6',
     name:'axios错误处理',
-    component:()=>import('../views/lx5.vue')
+    component:()=>import('../views/lx6.vue')
+  },
+  {
+    path:'/lx7',
+    name:'axios取消处理',
+    component:()=>import('../views/lx7.vue')
   }
 ]
 
