@@ -54,6 +54,11 @@ Vue.use(VueRouter)
     path:'/lx7',
     name:'axios取消处理',
     component:()=>import('../views/lx7.vue')
+  },
+  {
+    path:'/contantList',
+    name:'联系人列表',
+    component:()=>import('../views/contantList.vue')
   }
 ]
 

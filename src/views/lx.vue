@@ -42,7 +42,7 @@ export default {
          id:1
     }
     //    this.$axios.post("/data.json",data
-    //     }).then(res=>{
+    //     ).then(res=>{
     //       console.log(res)
     //     })
 

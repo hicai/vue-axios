@@ -3,8 +3,20 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios'
+import { Button, Icon, Toast, ContactList, ContactEdit } from 'vant';
+Vue.use(Button);
+Vue.use(Icon);
+Vue.use(Toast);
+Vue.use(ContactList);
+Vue.use(ContactEdit);
+
 Vue.config.productionTip = false
-Vue.prototype.$axios = axios
+const axiosIns = axios.create({
+   baseURL:'http://localhost:9000/api',
+   timeout:1000
+})
+
+Vue.prototype.$axios = axiosIns
 new Vue({
   router,
   store,
