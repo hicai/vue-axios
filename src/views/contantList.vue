@@ -24,9 +24,9 @@ export default {
     }
   },
   created(){
-    this.instance = this.$axios.get('/contactList1').then(res=>{
+    this.$axios.get('/contactList1').then(res=>{
        this.list = res.data.data
-     }).catch(err=>{
+     }).catch(err => {
          Toast("出错了")
      })
   },

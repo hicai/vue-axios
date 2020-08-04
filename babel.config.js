@@ -9,5 +9,5 @@ module.exports = {
       style: true
     }, 'vant']
   ],
-  lintOnSave: false
+  
 }
