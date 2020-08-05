@@ -3,12 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from 'axios'
-import { Button, Icon, Toast, ContactList, ContactEdit } from 'vant';
+import { Button, Icon, Toast, ContactList, ContactEdit,Popup} from 'vant';
 Vue.use(Button);
 Vue.use(Icon);
 Vue.use(Toast);
 Vue.use(ContactList);
 Vue.use(ContactEdit);
+Vue.use(Popup);
 
 Vue.config.productionTip = false
 const axiosIns = axios.create({
