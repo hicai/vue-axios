@@ -40,41 +40,79 @@ export default {
     }
   },
   created(){
-    this.$axios.get('/contactList').then(res=>{
-       this.list = res.data.data
-     }).catch(err => {
-        console.log(err)
-         Toast("出错了")
-     })
+     this.getList()
   },
   methods:{
+    //获取列表
+    getList(){
+      this.$axios.get('/contactList').then(res=>{
+            this.list = res.data.data
+          }).catch(err => {
+              console.log(err)
+              Toast("出错了")
+       })
+    },
+
     // 新建联系人
     onAdd(){
        this.showEdit = true
        this.isEdit = false
+       this.editingContact = { id: this.list.length };
     },
 
     //编辑联系人
     onEdit(info){ 
      // info是ContactEdit组件内部在定义事件(如edit,save，delete)时，所声明的回调函数(onEdit,onSave,onDelete)中的参数，而这个参数代表的就是当前表单的内容。info实际上就是定义的回调函数的形参。
-       this.showEdit = true
-       this.isEdit = true
+        this.showEdit = true
+        this.isEdit = true
         this.editingContact = info
     },
 
     //选中联系人
     onSelect(){
-
+           this.showList = false; 
     },
 
     //保存联系人
-    onSave(){
-
+    onSave(info){
+       let self = this;
+       if(this.isEdit){ //判断是否是编辑保存
+          self.$axios.put('/contact/edit',info).then(res=>{
+           if(res.data.code === 200){
+             Toast('保存成功')
+             self.showEdit = false
+             self.getList()
+           }
+          }).catch(()=>{
+             Toast('请求失败，请稍后再试')
+          })
+       }else{
+            self.$axios.post('/contact/new/json',info,{
+              headers:{"content-type":"application/json"} //设置header信息
+            }).then(res=>{
+              if(res.data.code === 200){
+               Toast('新建成功')
+               self.showEdit = false
+               self.getList()
+              }       
+          }).catch(()=>{
+             Toast('请求失败，请稍后再试')
+          })
+       } 
     },
 
     //删除联系人
-    onDelete(){
-
+    onDelete(info){
+       let self = this;
+        this.$axios.delete('/contact',{
+          params:{
+            id:info.id
+          }
+        }).then(res=>{
+          Toast('删除成功')
+           self.showEdit = false
+           self.getList()
+        })
     }
   },
 
