@@ -3,6 +3,7 @@
     <!-- 列表 -->
     <van-contact-list
       :list="list"
+       v-model="chosenContactId"
       @add="onAdd"
       @edit="onEdit"
       @select="onSelect"
@@ -32,6 +33,7 @@ export default {
   props:{},
   data(){
     return {
+       chosenContactId:null,
        instance:null, // axios 实例
        showEdit:false, //编辑弹窗显隐
        isEdit:false, //是否编辑
@@ -49,7 +51,7 @@ export default {
             this.list = res.data.data
           }).catch(err => {
               console.log(err)
-              Toast("出错了")
+              Toast("请求失败，请稍后再试")
        })
     },
 
@@ -57,7 +59,7 @@ export default {
     onAdd(){
        this.showEdit = true
        this.isEdit = false
-       this.editingContact = { id: this.list.length };
+       this.editingContact = {  };
     },
 
     //编辑联系人
@@ -71,6 +73,7 @@ export default {
     //选中联系人
     onSelect(){
            this.showList = false; 
+           console.log(this.chosenContactId)
     },
 
     //保存联系人
